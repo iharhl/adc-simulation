@@ -2,4 +2,3 @@ src/__pycache__
 
 # own files
 src/circuit_sim.py
-src/filter.py

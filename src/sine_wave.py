@@ -9,8 +9,8 @@ def create(F: int = 5e2, T: float = 2e-3, max: float = 1):
 
     N: int = int(T * TIMESTEP)
 
-    time = np.linspace(0, T, N)
-    amplitude = (np.sin(2*np.pi*F*time)+1)*0.5*max
+    time: list[float] = np.linspace(0, T, N)
+    amplitude: list[float] = (np.sin(2*np.pi*F*time)+1)*0.5*max
 
     return (time, amplitude)
 

@@ -5,12 +5,15 @@ from constants import *
 
 def main():
 
+    # Create sine wave and add noise
     (time, amplitude) = sine_wave.create(T=TIME, max=3.2)
     analog = sine_wave.add_noise(amplitude, scale = 0.05)
 
+    # Digitize with ADC
     adc1 = adc.Adc(resolution=12, volt_max=6.2, sampling_fq=25e3)
-    digital = adc1.digitize(amplitude)
+    digital = adc1.digitize(analog)
 
+    # Plot
     plt.plot(time, amplitude, label="Sine voltage")
     plt.plot(time, analog, label="Sine voltage w/ noise")
     plt.plot(time, digital, label="Digitized voltage")
